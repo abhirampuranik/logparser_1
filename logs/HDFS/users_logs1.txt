@@ -1,0 +1,283 @@
+Untagged: users_website:latest
+Deleted: sha256:2ac31f85baeb31e52192479153ec26646e74036aaee6283068512c9256a84d27
+Deleted: sha256:e7fc3b1ce5b470010d88ee823d1dea9d648d855d33f74bc2c29430c695df3526
+Deleted: sha256:0cfdb39bd9bfa978d64ec6cd80668984992d29d9ee8f08e0c01f7846d64fbda8
+Deleted: sha256:e5cc68c7276495efce9f0cdbe0c1c4a8782eceb251325ed076f276e1a6a20f64
+users_datafiles
+Sending build context to Docker daemon  14.27MB
+Step 1/7 : FROM php:7.3-apache
+ ---> 35da9118b3c0
+Step 2/7 : RUN apt-get update && apt-get install -y git
+ ---> Using cache
+ ---> 0582794ad1ff
+Step 3/7 : RUN docker-php-ext-install pdo pdo_mysql mysqli
+ ---> Using cache
+ ---> dfdf8b98141a
+Step 4/7 : RUN a2enmod rewrite
+ ---> Using cache
+ ---> 4b67bbc254d2
+Step 5/7 : COPY src /var/www/html/
+ ---> 65362dd44a6f
+Step 6/7 : EXPOSE 80/tcp
+ ---> Running in ad71d453b46a
+Removing intermediate container ad71d453b46a
+ ---> 11b3cd3d1f72
+Step 7/7 : EXPOSE 443/tcp
+ ---> Running in 3fd52ae36e3a
+Removing intermediate container 3fd52ae36e3a
+ ---> e789985f1cef
+Successfully built e789985f1cef
+Successfully tagged users_website:latest
+Attaching to mysql8_users1, php73_users1
+[36mmysql8_users1 |[0m Initializing database
+[36mmysql8_users1 |[0m 2022-04-05T05:35:58.666959Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
+[33mphp73_users1 |[0m AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.9. Set the 'ServerName' directive globally to suppress this message
+[36mmysql8_users1 |[0m mbind: Operation not permitted
+[36mmysql8_users1 |[0m mbind: Operation not permitted
+[36mmysql8_users1 |[0m mbind: Operation not permitted
+[36mmysql8_users1 |[0m mbind: Operation not permitted
+[33mphp73_users1 |[0m AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.9. Set the 'ServerName' directive globally to suppress this message
+[36mmysql8_users1 |[0m 2022-04-05T05:36:00.323248Z 1 [Warning] InnoDB: New log files created, LSN=49311
+[33mphp73_users1 |[0m [Tue Apr 05 05:36:01.582252 2022] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.52 (Debian) PHP/7.3.33 configured -- resuming normal operations
+[33mphp73_users1 |[0m [Tue Apr 05 05:36:01.582289 2022] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[36mmysql8_users1 |[0m 2022-04-05T05:36:00.991260Z 1 [Warning] InnoDB: Creating foreign key constraint system tables.
+[36mmysql8_users1 |[0m 2022-04-05T05:36:07.223678Z 0 [Warning] No existing UUID has been found, so we assume that this is the first time that this server has been started. Generating a new UUID: 4aad9ea8-b4a2-11ec-a885-0242ac120008.
+[36mmysql8_users1 |[0m 2022-04-05T05:36:07.246426Z 0 [Warning] Gtid table is not ready to be used. Table 'mysql.gtid_executed' cannot be opened.
+[36mmysql8_users1 |[0m 2022-04-05T05:36:07.246769Z 4 [Warning] root@localhost is created with an empty password ! Please consider switching off the --initialize-insecure option.
+[36mmysql8_users1 |[0m 2022-04-05T05:36:20.879630Z 4 [Warning] 'user' entry 'mysql.sys@localhost' ignored in --skip-name-resolve mode.
+[36mmysql8_users1 |[0m 2022-04-05T05:36:20.879688Z 4 [Warning] 'user' entry 'root@localhost' ignored in --skip-name-resolve mode.
+[36mmysql8_users1 |[0m 2022-04-05T05:36:20.879708Z 4 [Warning] 'db' entry 'sys mysql.sys@localhost' ignored in --skip-name-resolve mode.
+[36mmysql8_users1 |[0m 2022-04-05T05:36:20.879724Z 4 [Warning] 'proxies_priv' entry '@ root@localhost' ignored in --skip-name-resolve mode.
+[36mmysql8_users1 |[0m 2022-04-05T05:36:20.879790Z 4 [Warning] 'tables_priv' entry 'sys_config mysql.sys@localhost' ignored in --skip-name-resolve mode.
+[36mmysql8_users1 |[0m Database initialized
+[36mmysql8_users1 |[0m Initializing certificates
+[36mmysql8_users1 |[0m Generating a 2048 bit RSA private key
+[36mmysql8_users1 |[0m ..................................................................................................................................+++
+[36mmysql8_users1 |[0m .....+++
+[36mmysql8_users1 |[0m unable to write 'random state'
+[36mmysql8_users1 |[0m writing new private key to 'ca-key.pem'
+[36mmysql8_users1 |[0m -----
+[36mmysql8_users1 |[0m Generating a 2048 bit RSA private key
+[36mmysql8_users1 |[0m ........................................+++
+[36mmysql8_users1 |[0m .....................................................................................................................................+++
+[36mmysql8_users1 |[0m unable to write 'random state'
+[36mmysql8_users1 |[0m writing new private key to 'server-key.pem'
+[36mmysql8_users1 |[0m -----
+[36mmysql8_users1 |[0m Generating a 2048 bit RSA private key
+[36mmysql8_users1 |[0m .....................................................................................+++
+[36mmysql8_users1 |[0m ...........+++
+[36mmysql8_users1 |[0m unable to write 'random state'
+[36mmysql8_users1 |[0m writing new private key to 'client-key.pem'
+[36mmysql8_users1 |[0m -----
+[36mmysql8_users1 |[0m Certificates initialized
+[36mmysql8_users1 |[0m MySQL init process in progress...
+[36mmysql8_users1 |[0m 2022-04-05T05:36:31.563820Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
+[36mmysql8_users1 |[0m 2022-04-05T05:36:31.564736Z 0 [Note] mysqld (mysqld 8.0.0-dmr) starting as process 88 ...
+[36mmysql8_users1 |[0m 2022-04-05T05:36:31.566745Z 0 [Note] InnoDB: Using Linux native AIO
+[36mmysql8_users1 |[0m 2022-04-05T05:36:31.566822Z 0 [Note] Plugin 'FEDERATED' is disabled.
+[36mmysql8_users1 |[0m 2022-04-05T05:36:31.567433Z 1 [Note] InnoDB: PUNCH HOLE support available
+[36mmysql8_users1 |[0m 2022-04-05T05:36:31.567444Z 1 [Note] InnoDB: Mutexes and rw_locks use GCC atomic builtins
+[36mmysql8_users1 |[0m 2022-04-05T05:36:31.567446Z 1 [Note] InnoDB: Uses event mutexes
+[36mmysql8_users1 |[0m 2022-04-05T05:36:31.567448Z 1 [Note] InnoDB: GCC builtin __atomic_thread_fence() is used for memory barrier
+[36mmysql8_users1 |[0m 2022-04-05T05:36:31.567450Z 1 [Note] InnoDB: Compressed tables use zlib 1.2.3
+[36mmysql8_users1 |[0m 2022-04-05T05:36:31.567616Z 1 [Note] InnoDB: Number of pools: 1
+[36mmysql8_users1 |[0m 2022-04-05T05:36:31.567705Z 1 [Note] InnoDB: Using CPU crc32 instructions
+[36mmysql8_users1 |[0m 2022-04-05T05:36:31.568789Z 1 [Note] InnoDB: Initializing buffer pool, total size = 128M, instances = 1, chunk size = 128M
+[36mmysql8_users1 |[0m mbind: Operation not permitted
+[36mmysql8_users1 |[0m mbind: Operation not permitted
+[36mmysql8_users1 |[0m mbind: Operation not permitted
+[36mmysql8_users1 |[0m mbind: Operation not permitted
+[36mmysql8_users1 |[0m 2022-04-05T05:36:31.574389Z 1 [Note] InnoDB: Completed initialization of buffer pool
+[36mmysql8_users1 |[0m 2022-04-05T05:36:31.575822Z 0 [Note] InnoDB: If the mysqld execution user is authorized, page cleaner thread priority can be changed. See the man page of setpriority().
+[36mmysql8_users1 |[0m 2022-04-05T05:36:31.727814Z 1 [Note] InnoDB: Creating shared tablespace for temporary tables
+[36mmysql8_users1 |[0m 2022-04-05T05:36:31.727918Z 1 [Note] InnoDB: Setting file './ibtmp1' size to 12 MB. Physically writing the file full; Please wait ...
+[36mmysql8_users1 |[0m 2022-04-05T05:36:31.866014Z 1 [Note] InnoDB: File './ibtmp1' size is now 12 MB.
+[36mmysql8_users1 |[0m 2022-04-05T05:36:31.866838Z 1 [Note] InnoDB: 96 redo rollback segment(s) found. 96 redo rollback segment(s) are active.
+[36mmysql8_users1 |[0m 2022-04-05T05:36:31.866860Z 1 [Note] InnoDB: 32 non-redo rollback segment(s) are active.
+[36mmysql8_users1 |[0m 2022-04-05T05:36:31.867226Z 1 [Note] InnoDB: 8.0.0 started; log sequence number 10685013
+[36mmysql8_users1 |[0m 2022-04-05T05:36:31.868259Z 1 [Note] InnoDB: Waiting for purge to start
+[36mmysql8_users1 |[0m 2022-04-05T05:36:31.918691Z 0 [Note] InnoDB: Loading buffer pool(s) from /var/lib/mysql/ib_buffer_pool
+[36mmysql8_users1 |[0m 2022-04-05T05:36:31.922585Z 0 [Note] InnoDB: Buffer pool(s) load completed at 220405  5:36:31
+[36mmysql8_users1 |[0m 2022-04-05T05:36:31.966476Z 1 [Note] Found data dictionary with version 1
+[36mmysql8_users1 |[0m 2022-04-05T05:36:31.968521Z 0 [Note] Found ca.pem, server-cert.pem and server-key.pem in data directory. Trying to enable SSL support using them.
+[36mmysql8_users1 |[0m 2022-04-05T05:36:31.968690Z 0 [Warning] CA certificate ca.pem is self signed.
+[36mmysql8_users1 |[0m 2022-04-05T05:36:31.993015Z 0 [Warning] 'user' entry 'mysql.sys@localhost' ignored in --skip-name-resolve mode.
+[36mmysql8_users1 |[0m 2022-04-05T05:36:31.993042Z 0 [Warning] 'user' entry 'root@localhost' ignored in --skip-name-resolve mode.
+[36mmysql8_users1 |[0m 2022-04-05T05:36:31.993060Z 0 [Warning] 'db' entry 'sys mysql.sys@localhost' ignored in --skip-name-resolve mode.
+[36mmysql8_users1 |[0m 2022-04-05T05:36:31.993090Z 0 [Warning] 'proxies_priv' entry '@ root@localhost' ignored in --skip-name-resolve mode.
+[36mmysql8_users1 |[0m 2022-04-05T05:36:31.995004Z 0 [Warning] 'tables_priv' entry 'sys_config mysql.sys@localhost' ignored in --skip-name-resolve mode.
+[36mmysql8_users1 |[0m 2022-04-05T05:36:32.013881Z 0 [Note] mysqld: ready for connections.
+[36mmysql8_users1 |[0m Version: '8.0.0-dmr'  socket: '/var/run/mysqld/mysqld.sock'  port: 0  MySQL Community Server (GPL)
+[36mmysql8_users1 |[0m Warning: Unable to load '/usr/share/zoneinfo/iso3166.tab' as time zone. Skipping it.
+[36mmysql8_users1 |[0m Warning: Unable to load '/usr/share/zoneinfo/leap-seconds.list' as time zone. Skipping it.
+[36mmysql8_users1 |[0m Warning: Unable to load '/usr/share/zoneinfo/zone.tab' as time zone. Skipping it.
+[36mmysql8_users1 |[0m 2022-04-05T05:36:36.814780Z 6 [Warning] 'user' entry 'mysql.sys@localhost' ignored in --skip-name-resolve mode.
+[36mmysql8_users1 |[0m 2022-04-05T05:36:36.814807Z 6 [Warning] 'user' entry 'root@localhost' ignored in --skip-name-resolve mode.
+[36mmysql8_users1 |[0m 2022-04-05T05:36:36.814841Z 6 [Warning] 'db' entry 'sys mysql.sys@localhost' ignored in --skip-name-resolve mode.
+[36mmysql8_users1 |[0m 2022-04-05T05:36:36.814852Z 6 [Warning] 'proxies_priv' entry '@ root@localhost' ignored in --skip-name-resolve mode.
+[36mmysql8_users1 |[0m 2022-04-05T05:36:36.814905Z 6 [Warning] 'tables_priv' entry 'sys_config mysql.sys@localhost' ignored in --skip-name-resolve mode.
+[36mmysql8_users1 |[0m 
+[36mmysql8_users1 |[0m 2022-04-05T05:36:36.816258Z 0 [Note] Giving 0 client threads a chance to die gracefully
+[36mmysql8_users1 |[0m 2022-04-05T05:36:36.816273Z 0 [Note] Shutting down slave threads
+[36mmysql8_users1 |[0m 2022-04-05T05:36:36.816275Z 0 [Note] Forcefully disconnecting 0 remaining clients
+[36mmysql8_users1 |[0m 2022-04-05T05:36:36.816278Z 0 [Note] Event Scheduler: Purging the queue. 0 events
+[36mmysql8_users1 |[0m 2022-04-05T05:36:36.816327Z 0 [Note] InnoDB: FTS optimize thread exiting.
+[36mmysql8_users1 |[0m 2022-04-05T05:36:36.917604Z 0 [Note] Binlog end
+[36mmysql8_users1 |[0m 2022-04-05T05:36:36.918845Z 0 [Note] Shutting down plugin 'ngram'
+[36mmysql8_users1 |[0m 2022-04-05T05:36:36.918856Z 0 [Note] Shutting down plugin 'BLACKHOLE'
+[36mmysql8_users1 |[0m 2022-04-05T05:36:36.918858Z 0 [Note] Shutting down plugin 'ARCHIVE'
+[36mmysql8_users1 |[0m 2022-04-05T05:36:36.918859Z 0 [Note] Shutting down plugin 'INNODB_CACHED_INDEXES'
+[36mmysql8_users1 |[0m 2022-04-05T05:36:36.918861Z 0 [Note] Shutting down plugin 'INNODB_SYS_VIRTUAL'
+[36mmysql8_users1 |[0m 2022-04-05T05:36:36.918862Z 0 [Note] Shutting down plugin 'INNODB_SYS_DATAFILES'
+[36mmysql8_users1 |[0m 2022-04-05T05:36:36.918863Z 0 [Note] Shutting down plugin 'INNODB_SYS_TABLESPACES'
+[36mmysql8_users1 |[0m 2022-04-05T05:36:36.918864Z 0 [Note] Shutting down plugin 'INNODB_SYS_FOREIGN_COLS'
+[36mmysql8_users1 |[0m 2022-04-05T05:36:36.918883Z 0 [Note] Shutting down plugin 'INNODB_SYS_FOREIGN'
+[36mmysql8_users1 |[0m 2022-04-05T05:36:36.918884Z 0 [Note] Shutting down plugin 'INNODB_SYS_FIELDS'
+[36mmysql8_users1 |[0m 2022-04-05T05:36:36.918885Z 0 [Note] Shutting down plugin 'INNODB_SYS_COLUMNS'
+[36mmysql8_users1 |[0m 2022-04-05T05:36:36.918886Z 0 [Note] Shutting down plugin 'INNODB_SYS_INDEXES'
+[36mmysql8_users1 |[0m 2022-04-05T05:36:36.918887Z 0 [Note] Shutting down plugin 'INNODB_SYS_TABLESTATS'
+[36mmysql8_users1 |[0m 2022-04-05T05:36:36.918888Z 0 [Note] Shutting down plugin 'INNODB_SYS_TABLES'
+[36mmysql8_users1 |[0m 2022-04-05T05:36:36.918890Z 0 [Note] Shutting down plugin 'INNODB_FT_INDEX_TABLE'
+[36mmysql8_users1 |[0m 2022-04-05T05:36:36.918891Z 0 [Note] Shutting down plugin 'INNODB_FT_INDEX_CACHE'
+[36mmysql8_users1 |[0m 2022-04-05T05:36:36.918892Z 0 [Note] Shutting down plugin 'INNODB_FT_CONFIG'
+[36mmysql8_users1 |[0m 2022-04-05T05:36:36.918894Z 0 [Note] Shutting down plugin 'INNODB_FT_BEING_DELETED'
+[36mmysql8_users1 |[0m 2022-04-05T05:36:36.918896Z 0 [Note] Shutting down plugin 'INNODB_FT_DELETED'
+[36mmysql8_users1 |[0m 2022-04-05T05:36:36.918897Z 0 [Note] Shutting down plugin 'INNODB_FT_DEFAULT_STOPWORD'
+[36mmysql8_users1 |[0m 2022-04-05T05:36:36.918898Z 0 [Note] Shutting down plugin 'INNODB_METRICS'
+[36mmysql8_users1 |[0m 2022-04-05T05:36:36.918899Z 0 [Note] Shutting down plugin 'INNODB_TEMP_TABLE_INFO'
+[36mmysql8_users1 |[0m 2022-04-05T05:36:36.918900Z 0 [Note] Shutting down plugin 'INNODB_BUFFER_POOL_STATS'
+[36mmysql8_users1 |[0m 2022-04-05T05:36:36.918901Z 0 [Note] Shutting down plugin 'INNODB_BUFFER_PAGE_LRU'
+[36mmysql8_users1 |[0m 2022-04-05T05:36:36.918902Z 0 [Note] Shutting down plugin 'INNODB_BUFFER_PAGE'
+[36mmysql8_users1 |[0m 2022-04-05T05:36:36.918904Z 0 [Note] Shutting down plugin 'INNODB_CMP_PER_INDEX_RESET'
+[36mmysql8_users1 |[0m 2022-04-05T05:36:36.918906Z 0 [Note] Shutting down plugin 'INNODB_CMP_PER_INDEX'
+[36mmysql8_users1 |[0m 2022-04-05T05:36:36.918907Z 0 [Note] Shutting down plugin 'INNODB_CMPMEM_RESET'
+[36mmysql8_users1 |[0m 2022-04-05T05:36:36.918909Z 0 [Note] Shutting down plugin 'INNODB_CMPMEM'
+[36mmysql8_users1 |[0m 2022-04-05T05:36:36.918910Z 0 [Note] Shutting down plugin 'INNODB_CMP_RESET'
+[36mmysql8_users1 |[0m 2022-04-05T05:36:36.918912Z 0 [Note] Shutting down plugin 'INNODB_CMP'
+[36mmysql8_users1 |[0m 2022-04-05T05:36:36.918914Z 0 [Note] Shutting down plugin 'INNODB_LOCK_WAITS'
+[36mmysql8_users1 |[0m 2022-04-05T05:36:36.918915Z 0 [Note] Shutting down plugin 'INNODB_LOCKS'
+[36mmysql8_users1 |[0m 2022-04-05T05:36:36.918916Z 0 [Note] Shutting down plugin 'INNODB_TRX'
+[36mmysql8_users1 |[0m 2022-04-05T05:36:36.918918Z 0 [Note] Shutting down plugin 'InnoDB'
+[36mmysql8_users1 |[0m 2022-04-05T05:36:36.918951Z 0 [Note] InnoDB: Starting shutdown...
+[36mmysql8_users1 |[0m 2022-04-05T05:36:37.019376Z 0 [Note] InnoDB: Dumping buffer pool(s) to /var/lib/mysql/ib_buffer_pool
+[36mmysql8_users1 |[0m 2022-04-05T05:36:37.019740Z 0 [Note] InnoDB: Buffer pool(s) dump completed at 220405  5:36:37
+[36mmysql8_users1 |[0m 2022-04-05T05:36:39.114840Z 0 [Note] InnoDB: Shutdown completed; log sequence number 20332588
+[36mmysql8_users1 |[0m 2022-04-05T05:36:39.116333Z 0 [Note] InnoDB: Removed temporary tablespace data file: "ibtmp1"
+[36mmysql8_users1 |[0m 2022-04-05T05:36:39.116360Z 0 [Note] Shutting down plugin 'MRG_MYISAM'
+[36mmysql8_users1 |[0m 2022-04-05T05:36:39.116365Z 0 [Note] Shutting down plugin 'MyISAM'
+[36mmysql8_users1 |[0m 2022-04-05T05:36:39.116378Z 0 [Note] Shutting down plugin 'CSV'
+[36mmysql8_users1 |[0m 2022-04-05T05:36:39.116381Z 0 [Note] Shutting down plugin 'MEMORY'
+[36mmysql8_users1 |[0m 2022-04-05T05:36:39.116384Z 0 [Note] Shutting down plugin 'PERFORMANCE_SCHEMA'
+[36mmysql8_users1 |[0m 2022-04-05T05:36:39.116402Z 0 [Note] Shutting down plugin 'sha256_password'
+[36mmysql8_users1 |[0m 2022-04-05T05:36:39.116408Z 0 [Note] Shutting down plugin 'mysql_native_password'
+[36mmysql8_users1 |[0m 2022-04-05T05:36:39.116507Z 0 [Note] Shutting down plugin 'binlog'
+[36mmysql8_users1 |[0m 2022-04-05T05:36:39.117454Z 0 [Note] mysqld: Shutdown complete
+[36mmysql8_users1 |[0m 
+[36mmysql8_users1 |[0m 
+[36mmysql8_users1 |[0m MySQL init process done. Ready for start up.
+[36mmysql8_users1 |[0m 
+[36mmysql8_users1 |[0m 2022-04-05T05:36:39.345975Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
+[36mmysql8_users1 |[0m 2022-04-05T05:36:39.346922Z 0 [Note] mysqld (mysqld 8.0.0-dmr) starting as process 1 ...
+[36mmysql8_users1 |[0m 2022-04-05T05:36:39.349207Z 0 [Note] InnoDB: Using Linux native AIO
+[36mmysql8_users1 |[0m 2022-04-05T05:36:39.349284Z 0 [Note] Plugin 'FEDERATED' is disabled.
+[36mmysql8_users1 |[0m 2022-04-05T05:36:39.349889Z 1 [Note] InnoDB: PUNCH HOLE support available
+[36mmysql8_users1 |[0m 2022-04-05T05:36:39.349901Z 1 [Note] InnoDB: Mutexes and rw_locks use GCC atomic builtins
+[36mmysql8_users1 |[0m 2022-04-05T05:36:39.349905Z 1 [Note] InnoDB: Uses event mutexes
+[36mmysql8_users1 |[0m 2022-04-05T05:36:39.349907Z 1 [Note] InnoDB: GCC builtin __atomic_thread_fence() is used for memory barrier
+[36mmysql8_users1 |[0m 2022-04-05T05:36:39.349910Z 1 [Note] InnoDB: Compressed tables use zlib 1.2.3
+[36mmysql8_users1 |[0m 2022-04-05T05:36:39.350075Z 1 [Note] InnoDB: Number of pools: 1
+[36mmysql8_users1 |[0m 2022-04-05T05:36:39.350165Z 1 [Note] InnoDB: Using CPU crc32 instructions
+[36mmysql8_users1 |[0m 2022-04-05T05:36:39.351301Z 1 [Note] InnoDB: Initializing buffer pool, total size = 128M, instances = 1, chunk size = 128M
+[36mmysql8_users1 |[0m mbind: Operation not permitted
+[36mmysql8_users1 |[0m mbind: Operation not permitted
+[36mmysql8_users1 |[0m mbind: Operation not permitted
+[36mmysql8_users1 |[0m mbind: Operation not permitted
+[36mmysql8_users1 |[0m 2022-04-05T05:36:39.357003Z 1 [Note] InnoDB: Completed initialization of buffer pool
+[36mmysql8_users1 |[0m 2022-04-05T05:36:39.358529Z 0 [Note] InnoDB: If the mysqld execution user is authorized, page cleaner thread priority can be changed. See the man page of setpriority().
+[36mmysql8_users1 |[0m 2022-04-05T05:36:39.458311Z 1 [Note] InnoDB: Creating shared tablespace for temporary tables
+[36mmysql8_users1 |[0m 2022-04-05T05:36:39.458420Z 1 [Note] InnoDB: Setting file './ibtmp1' size to 12 MB. Physically writing the file full; Please wait ...
+[36mmysql8_users1 |[0m 2022-04-05T05:36:39.585216Z 1 [Note] InnoDB: File './ibtmp1' size is now 12 MB.
+[36mmysql8_users1 |[0m 2022-04-05T05:36:39.586069Z 1 [Note] InnoDB: 96 redo rollback segment(s) found. 96 redo rollback segment(s) are active.
+[36mmysql8_users1 |[0m 2022-04-05T05:36:39.586088Z 1 [Note] InnoDB: 32 non-redo rollback segment(s) are active.
+[36mmysql8_users1 |[0m 2022-04-05T05:36:39.586502Z 1 [Note] InnoDB: 8.0.0 started; log sequence number 20332588
+[36mmysql8_users1 |[0m 2022-04-05T05:36:39.587538Z 1 [Note] InnoDB: Waiting for purge to start
+[36mmysql8_users1 |[0m 2022-04-05T05:36:39.638087Z 0 [Note] InnoDB: Loading buffer pool(s) from /var/lib/mysql/ib_buffer_pool
+[36mmysql8_users1 |[0m 2022-04-05T05:36:39.642812Z 0 [Note] InnoDB: Buffer pool(s) load completed at 220405  5:36:39
+[36mmysql8_users1 |[0m 2022-04-05T05:36:39.685647Z 1 [Note] Found data dictionary with version 1
+[36mmysql8_users1 |[0m 2022-04-05T05:36:39.687575Z 0 [Note] Found ca.pem, server-cert.pem and server-key.pem in data directory. Trying to enable SSL support using them.
+[36mmysql8_users1 |[0m 2022-04-05T05:36:39.687744Z 0 [Warning] CA certificate ca.pem is self signed.
+[36mmysql8_users1 |[0m 2022-04-05T05:36:39.688891Z 0 [Note] Server hostname (bind-address): '*'; port: 3309
+[36mmysql8_users1 |[0m 2022-04-05T05:36:39.688950Z 0 [Note] IPv6 is available.
+[36mmysql8_users1 |[0m 2022-04-05T05:36:39.688962Z 0 [Note]   - '::' resolves to '::';
+[36mmysql8_users1 |[0m 2022-04-05T05:36:39.688997Z 0 [Note] Server socket created on IP: '::'.
+[36mmysql8_users1 |[0m 2022-04-05T05:36:39.712106Z 0 [Warning] 'user' entry 'mysql.sys@localhost' ignored in --skip-name-resolve mode.
+[36mmysql8_users1 |[0m 2022-04-05T05:36:39.712137Z 0 [Warning] 'user' entry 'root@localhost' ignored in --skip-name-resolve mode.
+[36mmysql8_users1 |[0m 2022-04-05T05:36:39.712153Z 0 [Warning] 'db' entry 'sys mysql.sys@localhost' ignored in --skip-name-resolve mode.
+[36mmysql8_users1 |[0m 2022-04-05T05:36:39.712185Z 0 [Warning] 'proxies_priv' entry '@ root@localhost' ignored in --skip-name-resolve mode.
+[36mmysql8_users1 |[0m 2022-04-05T05:36:39.714500Z 0 [Warning] 'tables_priv' entry 'sys_config mysql.sys@localhost' ignored in --skip-name-resolve mode.
+[36mmysql8_users1 |[0m 2022-04-05T05:36:39.736326Z 0 [Note] mysqld: ready for connections.
+[36mmysql8_users1 |[0m Version: '8.0.0-dmr'  socket: '/var/run/mysqld/mysqld.sock'  port: 3309  MySQL Community Server (GPL)
+[33mphp73_users1 |[0m 172.18.0.1 - - [05/Apr/2022:05:41:44 +0000] "GET /login.php HTTP/1.1" 200 4752 "http://172.18.0.5/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+[33mphp73_users1 |[0m 172.18.0.1 - - [05/Apr/2022:05:41:44 +0000] "GET /js/jquery.min.js HTTP/1.1" 404 488 "http://172.18.0.9/login.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+[33mphp73_users1 |[0m 172.18.0.1 - - [05/Apr/2022:05:41:44 +0000] "GET /js/bootstrap.min.js HTTP/1.1" 404 489 "http://172.18.0.9/login.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+[33mphp73_users1 |[0m 172.18.0.1 - - [05/Apr/2022:05:41:44 +0000] "GET /js/slick.min.js HTTP/1.1" 404 489 "http://172.18.0.9/login.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+[33mphp73_users1 |[0m 172.18.0.1 - - [05/Apr/2022:05:41:44 +0000] "GET /js/nouislider.min.js HTTP/1.1" 404 489 "http://172.18.0.9/login.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+[33mphp73_users1 |[0m 172.18.0.1 - - [05/Apr/2022:05:41:44 +0000] "GET /js/jquery.zoom.min.js HTTP/1.1" 404 489 "http://172.18.0.9/login.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+[33mphp73_users1 |[0m 172.18.0.1 - - [05/Apr/2022:05:41:44 +0000] "GET /js/actions.js HTTP/1.1" 404 488 "http://172.18.0.9/login.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+[33mphp73_users1 |[0m 172.18.0.1 - - [05/Apr/2022:05:41:44 +0000] "GET /js/sweetalert.min HTTP/1.1" 404 488 "http://172.18.0.9/login.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+[33mphp73_users1 |[0m 172.18.0.1 - - [05/Apr/2022:05:41:44 +0000] "GET /js/jquery.payform.min.js HTTP/1.1" 404 488 "http://172.18.0.9/login.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+[33mphp73_users1 |[0m 172.18.0.1 - - [05/Apr/2022:05:41:44 +0000] "GET /js/script.js HTTP/1.1" 404 488 "http://172.18.0.9/login.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+[33mphp73_users1 |[0m 172.18.0.1 - - [05/Apr/2022:05:41:44 +0000] "GET /fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 200 77449 "http://172.18.0.9/css/font-awesome.min.css" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+[33mphp73_users1 |[0m 172.18.0.1 - - [05/Apr/2022:05:41:44 +0000] "GET /js/main.js HTTP/1.1" 404 489 "http://172.18.0.9/login.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+[33mphp73_users1 |[0m 172.18.0.1 - - [05/Apr/2022:05:41:44 +0000] "GET /favicon.ico HTTP/1.1" 404 488 "http://172.18.0.9/login.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+[33mphp73_users1 |[0m 127.0.0.1 - - [05/Apr/2022:05:41:51 +0000] "OPTIONS * HTTP/1.0" 200 126 "-" "Apache/2.4.52 (Debian) PHP/7.3.33 (internal dummy connection)"
+[33mphp73_users1 |[0m 127.0.0.1 - - [05/Apr/2022:05:41:52 +0000] "OPTIONS * HTTP/1.0" 200 126 "-" "Apache/2.4.52 (Debian) PHP/7.3.33 (internal dummy connection)"
+[33mphp73_users1 |[0m 172.18.0.1 - - [05/Apr/2022:05:42:00 +0000] "POST /login.php HTTP/1.1" 200 2913 "http://172.18.0.9/login.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+[33mphp73_users1 |[0m 172.18.0.1 - - [05/Apr/2022:05:42:00 +0000] "GET /register.php HTTP/1.1" 200 4585 "http://172.18.0.9/login.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+[33mphp73_users1 |[0m 172.18.0.1 - - [05/Apr/2022:05:42:00 +0000] "GET /js/jquery.min.js HTTP/1.1" 404 488 "http://172.18.0.9/register.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+[33mphp73_users1 |[0m 172.18.0.1 - - [05/Apr/2022:05:42:00 +0000] "GET /js/bootstrap.min.js HTTP/1.1" 404 489 "http://172.18.0.9/register.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+[33mphp73_users1 |[0m 172.18.0.1 - - [05/Apr/2022:05:42:00 +0000] "GET /js/slick.min.js HTTP/1.1" 404 489 "http://172.18.0.9/register.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+[33mphp73_users1 |[0m 172.18.0.1 - - [05/Apr/2022:05:42:00 +0000] "GET /js/nouislider.min.js HTTP/1.1" 404 489 "http://172.18.0.9/register.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+[33mphp73_users1 |[0m 172.18.0.1 - - [05/Apr/2022:05:42:00 +0000] "GET /js/jquery.zoom.min.js HTTP/1.1" 404 489 "http://172.18.0.9/register.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+[33mphp73_users1 |[0m 172.18.0.1 - - [05/Apr/2022:05:42:00 +0000] "GET /js/main.js HTTP/1.1" 404 489 "http://172.18.0.9/register.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+[33mphp73_users1 |[0m 172.18.0.1 - - [05/Apr/2022:05:42:00 +0000] "GET /js/actions.js HTTP/1.1" 404 488 "http://172.18.0.9/register.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+[33mphp73_users1 |[0m 172.18.0.1 - - [05/Apr/2022:05:42:00 +0000] "GET /js/sweetalert.min HTTP/1.1" 404 488 "http://172.18.0.9/register.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+[33mphp73_users1 |[0m 172.18.0.1 - - [05/Apr/2022:05:42:00 +0000] "GET /js/jquery.payform.min.js HTTP/1.1" 404 488 "http://172.18.0.9/register.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+[33mphp73_users1 |[0m 172.18.0.1 - - [05/Apr/2022:05:42:00 +0000] "GET /js/script.js HTTP/1.1" 404 488 "http://172.18.0.9/register.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+[33mphp73_users1 |[0m 127.0.0.1 - - [05/Apr/2022:05:42:08 +0000] "OPTIONS * HTTP/1.0" 200 126 "-" "Apache/2.4.52 (Debian) PHP/7.3.33 (internal dummy connection)"
+[33mphp73_users1 |[0m 172.18.0.1 - - [05/Apr/2022:05:42:35 +0000] "POST /register.php HTTP/1.1" 200 2875 "http://172.18.0.9/register.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+[33mphp73_users1 |[0m 172.18.0.1 - - [05/Apr/2022:05:51:39 +0000] "GET /login.php HTTP/1.1" 200 4688 "http://172.18.0.5/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+[33mphp73_users1 |[0m 172.18.0.1 - - [05/Apr/2022:05:51:40 +0000] "GET /js/jquery.min.js HTTP/1.1" 404 488 "http://172.18.0.9/login.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+[33mphp73_users1 |[0m 172.18.0.1 - - [05/Apr/2022:05:51:40 +0000] "GET /js/bootstrap.min.js HTTP/1.1" 404 489 "http://172.18.0.9/login.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+[33mphp73_users1 |[0m 172.18.0.1 - - [05/Apr/2022:05:51:40 +0000] "GET /js/slick.min.js HTTP/1.1" 404 489 "http://172.18.0.9/login.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+[33mphp73_users1 |[0m 172.18.0.1 - - [05/Apr/2022:05:51:40 +0000] "GET /js/nouislider.min.js HTTP/1.1" 404 489 "http://172.18.0.9/login.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+[33mphp73_users1 |[0m 172.18.0.1 - - [05/Apr/2022:05:51:40 +0000] "GET /js/jquery.zoom.min.js HTTP/1.1" 404 489 "http://172.18.0.9/login.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+[33mphp73_users1 |[0m 172.18.0.1 - - [05/Apr/2022:05:51:40 +0000] "GET /js/main.js HTTP/1.1" 404 488 "http://172.18.0.9/login.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+[33mphp73_users1 |[0m 172.18.0.1 - - [05/Apr/2022:05:51:40 +0000] "GET /js/actions.js HTTP/1.1" 404 488 "http://172.18.0.9/login.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+[33mphp73_users1 |[0m 172.18.0.1 - - [05/Apr/2022:05:51:40 +0000] "GET /js/sweetalert.min HTTP/1.1" 404 488 "http://172.18.0.9/login.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+[33mphp73_users1 |[0m 172.18.0.1 - - [05/Apr/2022:05:51:40 +0000] "GET /js/jquery.payform.min.js HTTP/1.1" 404 489 "http://172.18.0.9/login.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+[33mphp73_users1 |[0m 172.18.0.1 - - [05/Apr/2022:05:51:40 +0000] "GET /js/script.js HTTP/1.1" 404 488 "http://172.18.0.9/login.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+[33mphp73_users1 |[0m 127.0.0.1 - - [05/Apr/2022:05:51:47 +0000] "OPTIONS * HTTP/1.0" 200 126 "-" "Apache/2.4.52 (Debian) PHP/7.3.33 (internal dummy connection)"
+[33mphp73_users1 |[0m 172.18.0.1 - - [05/Apr/2022:05:51:51 +0000] "POST /login.php HTTP/1.1" 200 2868 "http://172.18.0.9/login.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+[33mphp73_users1 |[0m 172.18.0.1 - - [05/Apr/2022:05:52:17 +0000] "GET /login.php HTTP/1.1" 200 4688 "http://172.18.0.5/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+[33mphp73_users1 |[0m 172.18.0.1 - - [05/Apr/2022:05:52:17 +0000] "GET /js/jquery.min.js HTTP/1.1" 404 488 "http://172.18.0.9/login.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+[33mphp73_users1 |[0m 172.18.0.1 - - [05/Apr/2022:05:52:17 +0000] "GET /js/bootstrap.min.js HTTP/1.1" 404 489 "http://172.18.0.9/login.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+[33mphp73_users1 |[0m 172.18.0.1 - - [05/Apr/2022:05:52:17 +0000] "GET /js/slick.min.js HTTP/1.1" 404 489 "http://172.18.0.9/login.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+[33mphp73_users1 |[0m 172.18.0.1 - - [05/Apr/2022:05:52:17 +0000] "GET /js/nouislider.min.js HTTP/1.1" 404 489 "http://172.18.0.9/login.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+[33mphp73_users1 |[0m 172.18.0.1 - - [05/Apr/2022:05:52:17 +0000] "GET /js/jquery.zoom.min.js HTTP/1.1" 404 489 "http://172.18.0.9/login.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+[33mphp73_users1 |[0m 172.18.0.1 - - [05/Apr/2022:05:52:17 +0000] "GET /js/main.js HTTP/1.1" 404 489 "http://172.18.0.9/login.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+[33mphp73_users1 |[0m 172.18.0.1 - - [05/Apr/2022:05:52:17 +0000] "GET /js/actions.js HTTP/1.1" 404 488 "http://172.18.0.9/login.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+[33mphp73_users1 |[0m 172.18.0.1 - - [05/Apr/2022:05:52:17 +0000] "GET /js/sweetalert.min HTTP/1.1" 404 488 "http://172.18.0.9/login.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+[33mphp73_users1 |[0m 172.18.0.1 - - [05/Apr/2022:05:52:17 +0000] "GET /js/jquery.payform.min.js HTTP/1.1" 404 488 "http://172.18.0.9/login.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+[33mphp73_users1 |[0m 172.18.0.1 - - [05/Apr/2022:05:52:17 +0000] "GET /js/script.js HTTP/1.1" 404 488 "http://172.18.0.9/login.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+[33mphp73_users1 |[0m 127.0.0.1 - - [05/Apr/2022:05:52:24 +0000] "OPTIONS * HTTP/1.0" 200 126 "-" "Apache/2.4.52 (Debian) PHP/7.3.33 (internal dummy connection)"
+[33mphp73_users1 |[0m 172.18.0.1 - - [05/Apr/2022:05:52:39 +0000] "POST /login.php HTTP/1.1" 200 2914 "http://172.18.0.9/login.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+[33mphp73_users1 |[0m 172.18.0.11 - - [05/Apr/2022:05:52:39 +0000] "GET /users_api.php?id=3 HTTP/1.1" 200 1129 "-" "-"
+[33mphp73_users1 |[0m 172.18.0.11 - - [05/Apr/2022:05:52:39 +0000] "GET /users_api.php?id=4 HTTP/1.1" 200 167 "-" "-"
+[33mphp73_users1 |[0m 172.18.0.11 - - [05/Apr/2022:05:54:39 +0000] "GET /users_api.php?id=9 HTTP/1.1" 200 580 "-" "-"
+[33mphp73_users1 |[0m 172.18.0.11 - - [05/Apr/2022:05:54:56 +0000] "GET /users_api.php?id=9 HTTP/1.1" 200 580 "-" "-"
+[33mphp73_users1 |[0m 172.18.0.11 - - [05/Apr/2022:05:54:59 +0000] "GET /users_api.php?id=3 HTTP/1.1" 200 1129 "-" "-"
+[33mphp73_users1 |[0m 172.18.0.11 - - [05/Apr/2022:05:54:59 +0000] "GET /users_api.php?id=4 HTTP/1.1" 200 167 "-" "-"
+[33mphp73_users1 |[0m 172.18.0.11 - - [05/Apr/2022:05:56:44 +0000] "GET /users_api.php?id=9 HTTP/1.1" 200 580 "-" "-"
+[33mphp73_users1 |[0m 172.18.0.11 - - [05/Apr/2022:05:56:46 +0000] "GET /users_api.php?id=3 HTTP/1.1" 200 1129 "-" "-"
+[33mphp73_users1 |[0m 172.18.0.11 - - [05/Apr/2022:05:56:47 +0000] "GET /users_api.php?id=4 HTTP/1.1" 200 167 "-" "-"

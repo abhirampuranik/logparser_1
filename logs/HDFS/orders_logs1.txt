@@ -1,0 +1,329 @@
+Untagged: orders_website:latest
+Deleted: sha256:7685fff74c35e5a476c577f60500f8fa4ab3938bc58346edcddd89116382b90b
+Deleted: sha256:471be3aab993217ff331f631d7ff6e74d22203b007d276ffbda0e3e5477c4375
+Deleted: sha256:479fd8706d854035d517b2c8a6411ed7d35583299524d5bc21ef520c27c9726f
+Deleted: sha256:d0621c56e513a3bf392b6fdf378ae80f5391504605654fcd1227c7cdb2be62c2
+orders_datafiles
+Sending build context to Docker daemon  14.26MB
+Step 1/7 : FROM php:7.3-apache
+ ---> 35da9118b3c0
+Step 2/7 : RUN apt-get update && apt-get install -y git
+ ---> Using cache
+ ---> 0582794ad1ff
+Step 3/7 : RUN docker-php-ext-install pdo pdo_mysql mysqli
+ ---> Using cache
+ ---> dfdf8b98141a
+Step 4/7 : RUN a2enmod rewrite
+ ---> Using cache
+ ---> 4b67bbc254d2
+Step 5/7 : COPY src /var/www/html/
+ ---> 23c3a6591815
+Step 6/7 : EXPOSE 80/tcp
+ ---> Running in b90ff7e3373d
+Removing intermediate container b90ff7e3373d
+ ---> 0706086d62b9
+Step 7/7 : EXPOSE 443/tcp
+ ---> Running in 49e44d52ec6d
+Removing intermediate container 49e44d52ec6d
+ ---> e35c188124e8
+Successfully built e35c188124e8
+Successfully tagged orders_website:latest
+Attaching to mysql8_orders, php73_orders
+[36mmysql8_orders |[0m Initializing database
+[36mmysql8_orders |[0m 2022-04-05T05:33:17.428838Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
+[33mphp73_orders |[0m AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.7. Set the 'ServerName' directive globally to suppress this message
+[36mmysql8_orders |[0m mbind: Operation not permitted
+[36mmysql8_orders |[0m mbind: Operation not permitted
+[36mmysql8_orders |[0m mbind: Operation not permitted
+[36mmysql8_orders |[0m mbind: Operation not permitted
+[33mphp73_orders |[0m AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.7. Set the 'ServerName' directive globally to suppress this message
+[36mmysql8_orders |[0m 2022-04-05T05:33:19.031585Z 1 [Warning] InnoDB: New log files created, LSN=49311
+[33mphp73_orders |[0m [Tue Apr 05 05:33:20.234691 2022] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.52 (Debian) PHP/7.3.33 configured -- resuming normal operations
+[33mphp73_orders |[0m [Tue Apr 05 05:33:20.234722 2022] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[36mmysql8_orders |[0m 2022-04-05T05:33:19.334804Z 1 [Warning] InnoDB: Creating foreign key constraint system tables.
+[36mmysql8_orders |[0m 2022-04-05T05:33:25.932471Z 0 [Warning] No existing UUID has been found, so we assume that this is the first time that this server has been started. Generating a new UUID: ea8a88f7-b4a1-11ec-a415-0242ac120006.
+[36mmysql8_orders |[0m 2022-04-05T05:33:25.955415Z 0 [Warning] Gtid table is not ready to be used. Table 'mysql.gtid_executed' cannot be opened.
+[36mmysql8_orders |[0m 2022-04-05T05:33:25.956026Z 4 [Warning] root@localhost is created with an empty password ! Please consider switching off the --initialize-insecure option.
+[36mmysql8_orders |[0m 2022-04-05T05:33:39.556516Z 4 [Warning] 'user' entry 'mysql.sys@localhost' ignored in --skip-name-resolve mode.
+[36mmysql8_orders |[0m 2022-04-05T05:33:39.556559Z 4 [Warning] 'user' entry 'root@localhost' ignored in --skip-name-resolve mode.
+[36mmysql8_orders |[0m 2022-04-05T05:33:39.556603Z 4 [Warning] 'db' entry 'sys mysql.sys@localhost' ignored in --skip-name-resolve mode.
+[36mmysql8_orders |[0m 2022-04-05T05:33:39.556629Z 4 [Warning] 'proxies_priv' entry '@ root@localhost' ignored in --skip-name-resolve mode.
+[36mmysql8_orders |[0m 2022-04-05T05:33:39.556696Z 4 [Warning] 'tables_priv' entry 'sys_config mysql.sys@localhost' ignored in --skip-name-resolve mode.
+[36mmysql8_orders |[0m Database initialized
+[36mmysql8_orders |[0m Initializing certificates
+[36mmysql8_orders |[0m Generating a 2048 bit RSA private key
+[36mmysql8_orders |[0m ...............................................................................................................+++
+[36mmysql8_orders |[0m ................+++
+[36mmysql8_orders |[0m unable to write 'random state'
+[36mmysql8_orders |[0m writing new private key to 'ca-key.pem'
+[36mmysql8_orders |[0m -----
+[36mmysql8_orders |[0m Generating a 2048 bit RSA private key
+[36mmysql8_orders |[0m ..................................................................................................................................................+++
+[36mmysql8_orders |[0m ...............+++
+[36mmysql8_orders |[0m unable to write 'random state'
+[36mmysql8_orders |[0m writing new private key to 'server-key.pem'
+[36mmysql8_orders |[0m -----
+[36mmysql8_orders |[0m Generating a 2048 bit RSA private key
+[36mmysql8_orders |[0m ..............+++
+[36mmysql8_orders |[0m ......................................+++
+[36mmysql8_orders |[0m unable to write 'random state'
+[36mmysql8_orders |[0m writing new private key to 'client-key.pem'
+[36mmysql8_orders |[0m -----
+[36mmysql8_orders |[0m Certificates initialized
+[36mmysql8_orders |[0m MySQL init process in progress...
+[36mmysql8_orders |[0m 2022-04-05T05:33:49.984179Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
+[36mmysql8_orders |[0m 2022-04-05T05:33:49.985077Z 0 [Note] mysqld (mysqld 8.0.0-dmr) starting as process 88 ...
+[36mmysql8_orders |[0m 2022-04-05T05:33:49.987162Z 0 [Note] InnoDB: Using Linux native AIO
+[36mmysql8_orders |[0m 2022-04-05T05:33:49.987225Z 0 [Note] Plugin 'FEDERATED' is disabled.
+[36mmysql8_orders |[0m 2022-04-05T05:33:49.987788Z 1 [Note] InnoDB: PUNCH HOLE support available
+[36mmysql8_orders |[0m 2022-04-05T05:33:49.987798Z 1 [Note] InnoDB: Mutexes and rw_locks use GCC atomic builtins
+[36mmysql8_orders |[0m 2022-04-05T05:33:49.987801Z 1 [Note] InnoDB: Uses event mutexes
+[36mmysql8_orders |[0m 2022-04-05T05:33:49.987804Z 1 [Note] InnoDB: GCC builtin __atomic_thread_fence() is used for memory barrier
+[36mmysql8_orders |[0m 2022-04-05T05:33:49.987807Z 1 [Note] InnoDB: Compressed tables use zlib 1.2.3
+[36mmysql8_orders |[0m 2022-04-05T05:33:49.987970Z 1 [Note] InnoDB: Number of pools: 1
+[36mmysql8_orders |[0m 2022-04-05T05:33:49.988066Z 1 [Note] InnoDB: Using CPU crc32 instructions
+[36mmysql8_orders |[0m 2022-04-05T05:33:49.989169Z 1 [Note] InnoDB: Initializing buffer pool, total size = 128M, instances = 1, chunk size = 128M
+[36mmysql8_orders |[0m mbind: Operation not permitted
+[36mmysql8_orders |[0m mbind: Operation not permitted
+[36mmysql8_orders |[0m mbind: Operation not permitted
+[36mmysql8_orders |[0m mbind: Operation not permitted
+[36mmysql8_orders |[0m 2022-04-05T05:33:49.994729Z 1 [Note] InnoDB: Completed initialization of buffer pool
+[36mmysql8_orders |[0m 2022-04-05T05:33:49.996107Z 0 [Note] InnoDB: If the mysqld execution user is authorized, page cleaner thread priority can be changed. See the man page of setpriority().
+[36mmysql8_orders |[0m 2022-04-05T05:33:50.071822Z 1 [Note] InnoDB: Creating shared tablespace for temporary tables
+[36mmysql8_orders |[0m 2022-04-05T05:33:50.071930Z 1 [Note] InnoDB: Setting file './ibtmp1' size to 12 MB. Physically writing the file full; Please wait ...
+[36mmysql8_orders |[0m 2022-04-05T05:33:50.221009Z 1 [Note] InnoDB: File './ibtmp1' size is now 12 MB.
+[36mmysql8_orders |[0m 2022-04-05T05:33:50.221934Z 1 [Note] InnoDB: 96 redo rollback segment(s) found. 96 redo rollback segment(s) are active.
+[36mmysql8_orders |[0m 2022-04-05T05:33:50.221953Z 1 [Note] InnoDB: 32 non-redo rollback segment(s) are active.
+[36mmysql8_orders |[0m 2022-04-05T05:33:50.222345Z 1 [Note] InnoDB: 8.0.0 started; log sequence number 10683236
+[36mmysql8_orders |[0m 2022-04-05T05:33:50.223436Z 1 [Note] InnoDB: Waiting for purge to start
+[36mmysql8_orders |[0m 2022-04-05T05:33:50.274018Z 0 [Note] InnoDB: Loading buffer pool(s) from /var/lib/mysql/ib_buffer_pool
+[36mmysql8_orders |[0m 2022-04-05T05:33:50.277606Z 0 [Note] InnoDB: Buffer pool(s) load completed at 220405  5:33:50
+[36mmysql8_orders |[0m 2022-04-05T05:33:50.321740Z 1 [Note] Found data dictionary with version 1
+[36mmysql8_orders |[0m 2022-04-05T05:33:50.323870Z 0 [Note] Found ca.pem, server-cert.pem and server-key.pem in data directory. Trying to enable SSL support using them.
+[36mmysql8_orders |[0m 2022-04-05T05:33:50.324053Z 0 [Warning] CA certificate ca.pem is self signed.
+[36mmysql8_orders |[0m 2022-04-05T05:33:50.348213Z 0 [Warning] 'user' entry 'mysql.sys@localhost' ignored in --skip-name-resolve mode.
+[36mmysql8_orders |[0m 2022-04-05T05:33:50.348239Z 0 [Warning] 'user' entry 'root@localhost' ignored in --skip-name-resolve mode.
+[36mmysql8_orders |[0m 2022-04-05T05:33:50.348275Z 0 [Warning] 'db' entry 'sys mysql.sys@localhost' ignored in --skip-name-resolve mode.
+[36mmysql8_orders |[0m 2022-04-05T05:33:50.348288Z 0 [Warning] 'proxies_priv' entry '@ root@localhost' ignored in --skip-name-resolve mode.
+[36mmysql8_orders |[0m 2022-04-05T05:33:50.350205Z 0 [Warning] 'tables_priv' entry 'sys_config mysql.sys@localhost' ignored in --skip-name-resolve mode.
+[36mmysql8_orders |[0m 2022-04-05T05:33:50.369072Z 0 [Note] mysqld: ready for connections.
+[36mmysql8_orders |[0m Version: '8.0.0-dmr'  socket: '/var/run/mysqld/mysqld.sock'  port: 0  MySQL Community Server (GPL)
+[36mmysql8_orders |[0m Warning: Unable to load '/usr/share/zoneinfo/iso3166.tab' as time zone. Skipping it.
+[36mmysql8_orders |[0m Warning: Unable to load '/usr/share/zoneinfo/leap-seconds.list' as time zone. Skipping it.
+[36mmysql8_orders |[0m Warning: Unable to load '/usr/share/zoneinfo/zone.tab' as time zone. Skipping it.
+[36mmysql8_orders |[0m 2022-04-05T05:33:55.259408Z 6 [Warning] 'user' entry 'mysql.sys@localhost' ignored in --skip-name-resolve mode.
+[36mmysql8_orders |[0m 2022-04-05T05:33:55.259425Z 6 [Warning] 'user' entry 'root@localhost' ignored in --skip-name-resolve mode.
+[36mmysql8_orders |[0m 2022-04-05T05:33:55.259482Z 6 [Warning] 'db' entry 'sys mysql.sys@localhost' ignored in --skip-name-resolve mode.
+[36mmysql8_orders |[0m 2022-04-05T05:33:55.259491Z 6 [Warning] 'proxies_priv' entry '@ root@localhost' ignored in --skip-name-resolve mode.
+[36mmysql8_orders |[0m 2022-04-05T05:33:55.259535Z 6 [Warning] 'tables_priv' entry 'sys_config mysql.sys@localhost' ignored in --skip-name-resolve mode.
+[36mmysql8_orders |[0m 
+[36mmysql8_orders |[0m 2022-04-05T05:33:55.260877Z 0 [Note] Giving 0 client threads a chance to die gracefully
+[36mmysql8_orders |[0m 2022-04-05T05:33:55.260900Z 0 [Note] Shutting down slave threads
+[36mmysql8_orders |[0m 2022-04-05T05:33:55.260904Z 0 [Note] Forcefully disconnecting 0 remaining clients
+[36mmysql8_orders |[0m 2022-04-05T05:33:55.260908Z 0 [Note] Event Scheduler: Purging the queue. 0 events
+[36mmysql8_orders |[0m 2022-04-05T05:33:55.261075Z 0 [Note] InnoDB: FTS optimize thread exiting.
+[36mmysql8_orders |[0m 2022-04-05T05:33:55.362500Z 0 [Note] Binlog end
+[36mmysql8_orders |[0m 2022-04-05T05:33:55.363743Z 0 [Note] Shutting down plugin 'ngram'
+[36mmysql8_orders |[0m 2022-04-05T05:33:55.363757Z 0 [Note] Shutting down plugin 'BLACKHOLE'
+[36mmysql8_orders |[0m 2022-04-05T05:33:55.363760Z 0 [Note] Shutting down plugin 'ARCHIVE'
+[36mmysql8_orders |[0m 2022-04-05T05:33:55.363762Z 0 [Note] Shutting down plugin 'INNODB_CACHED_INDEXES'
+[36mmysql8_orders |[0m 2022-04-05T05:33:55.363764Z 0 [Note] Shutting down plugin 'INNODB_SYS_VIRTUAL'
+[36mmysql8_orders |[0m 2022-04-05T05:33:55.363766Z 0 [Note] Shutting down plugin 'INNODB_SYS_DATAFILES'
+[36mmysql8_orders |[0m 2022-04-05T05:33:55.363767Z 0 [Note] Shutting down plugin 'INNODB_SYS_TABLESPACES'
+[36mmysql8_orders |[0m 2022-04-05T05:33:55.363769Z 0 [Note] Shutting down plugin 'INNODB_SYS_FOREIGN_COLS'
+[36mmysql8_orders |[0m 2022-04-05T05:33:55.363771Z 0 [Note] Shutting down plugin 'INNODB_SYS_FOREIGN'
+[36mmysql8_orders |[0m 2022-04-05T05:33:55.363772Z 0 [Note] Shutting down plugin 'INNODB_SYS_FIELDS'
+[36mmysql8_orders |[0m 2022-04-05T05:33:55.363774Z 0 [Note] Shutting down plugin 'INNODB_SYS_COLUMNS'
+[36mmysql8_orders |[0m 2022-04-05T05:33:55.363775Z 0 [Note] Shutting down plugin 'INNODB_SYS_INDEXES'
+[36mmysql8_orders |[0m 2022-04-05T05:33:55.363777Z 0 [Note] Shutting down plugin 'INNODB_SYS_TABLESTATS'
+[36mmysql8_orders |[0m 2022-04-05T05:33:55.363778Z 0 [Note] Shutting down plugin 'INNODB_SYS_TABLES'
+[36mmysql8_orders |[0m 2022-04-05T05:33:55.363780Z 0 [Note] Shutting down plugin 'INNODB_FT_INDEX_TABLE'
+[36mmysql8_orders |[0m 2022-04-05T05:33:55.363782Z 0 [Note] Shutting down plugin 'INNODB_FT_INDEX_CACHE'
+[36mmysql8_orders |[0m 2022-04-05T05:33:55.363784Z 0 [Note] Shutting down plugin 'INNODB_FT_CONFIG'
+[36mmysql8_orders |[0m 2022-04-05T05:33:55.363786Z 0 [Note] Shutting down plugin 'INNODB_FT_BEING_DELETED'
+[36mmysql8_orders |[0m 2022-04-05T05:33:55.363788Z 0 [Note] Shutting down plugin 'INNODB_FT_DELETED'
+[36mmysql8_orders |[0m 2022-04-05T05:33:55.363790Z 0 [Note] Shutting down plugin 'INNODB_FT_DEFAULT_STOPWORD'
+[36mmysql8_orders |[0m 2022-04-05T05:33:55.363792Z 0 [Note] Shutting down plugin 'INNODB_METRICS'
+[36mmysql8_orders |[0m 2022-04-05T05:33:55.363794Z 0 [Note] Shutting down plugin 'INNODB_TEMP_TABLE_INFO'
+[36mmysql8_orders |[0m 2022-04-05T05:33:55.363797Z 0 [Note] Shutting down plugin 'INNODB_BUFFER_POOL_STATS'
+[36mmysql8_orders |[0m 2022-04-05T05:33:55.363799Z 0 [Note] Shutting down plugin 'INNODB_BUFFER_PAGE_LRU'
+[36mmysql8_orders |[0m 2022-04-05T05:33:55.363801Z 0 [Note] Shutting down plugin 'INNODB_BUFFER_PAGE'
+[36mmysql8_orders |[0m 2022-04-05T05:33:55.363804Z 0 [Note] Shutting down plugin 'INNODB_CMP_PER_INDEX_RESET'
+[36mmysql8_orders |[0m 2022-04-05T05:33:55.363806Z 0 [Note] Shutting down plugin 'INNODB_CMP_PER_INDEX'
+[36mmysql8_orders |[0m 2022-04-05T05:33:55.363808Z 0 [Note] Shutting down plugin 'INNODB_CMPMEM_RESET'
+[36mmysql8_orders |[0m 2022-04-05T05:33:55.363811Z 0 [Note] Shutting down plugin 'INNODB_CMPMEM'
+[36mmysql8_orders |[0m 2022-04-05T05:33:55.363813Z 0 [Note] Shutting down plugin 'INNODB_CMP_RESET'
+[36mmysql8_orders |[0m 2022-04-05T05:33:55.363815Z 0 [Note] Shutting down plugin 'INNODB_CMP'
+[36mmysql8_orders |[0m 2022-04-05T05:33:55.363817Z 0 [Note] Shutting down plugin 'INNODB_LOCK_WAITS'
+[36mmysql8_orders |[0m 2022-04-05T05:33:55.363820Z 0 [Note] Shutting down plugin 'INNODB_LOCKS'
+[36mmysql8_orders |[0m 2022-04-05T05:33:55.363822Z 0 [Note] Shutting down plugin 'INNODB_TRX'
+[36mmysql8_orders |[0m 2022-04-05T05:33:55.363824Z 0 [Note] Shutting down plugin 'InnoDB'
+[36mmysql8_orders |[0m 2022-04-05T05:33:55.363868Z 0 [Note] InnoDB: Starting shutdown...
+[36mmysql8_orders |[0m 2022-04-05T05:33:55.464010Z 0 [Note] InnoDB: Dumping buffer pool(s) to /var/lib/mysql/ib_buffer_pool
+[36mmysql8_orders |[0m 2022-04-05T05:33:55.464238Z 0 [Note] InnoDB: Buffer pool(s) dump completed at 220405  5:33:55
+[36mmysql8_orders |[0m 2022-04-05T05:33:57.456530Z 0 [Note] InnoDB: Shutdown completed; log sequence number 20330811
+[36mmysql8_orders |[0m 2022-04-05T05:33:57.457922Z 0 [Note] InnoDB: Removed temporary tablespace data file: "ibtmp1"
+[36mmysql8_orders |[0m 2022-04-05T05:33:57.457945Z 0 [Note] Shutting down plugin 'MRG_MYISAM'
+[36mmysql8_orders |[0m 2022-04-05T05:33:57.457950Z 0 [Note] Shutting down plugin 'MyISAM'
+[36mmysql8_orders |[0m 2022-04-05T05:33:57.457968Z 0 [Note] Shutting down plugin 'CSV'
+[36mmysql8_orders |[0m 2022-04-05T05:33:57.457972Z 0 [Note] Shutting down plugin 'MEMORY'
+[36mmysql8_orders |[0m 2022-04-05T05:33:57.457975Z 0 [Note] Shutting down plugin 'PERFORMANCE_SCHEMA'
+[36mmysql8_orders |[0m 2022-04-05T05:33:57.457993Z 0 [Note] Shutting down plugin 'sha256_password'
+[36mmysql8_orders |[0m 2022-04-05T05:33:57.457999Z 0 [Note] Shutting down plugin 'mysql_native_password'
+[36mmysql8_orders |[0m 2022-04-05T05:33:57.458123Z 0 [Note] Shutting down plugin 'binlog'
+[36mmysql8_orders |[0m 2022-04-05T05:33:57.459369Z 0 [Note] mysqld: Shutdown complete
+[36mmysql8_orders |[0m 
+[36mmysql8_orders |[0m 
+[36mmysql8_orders |[0m MySQL init process done. Ready for start up.
+[36mmysql8_orders |[0m 
+[36mmysql8_orders |[0m 2022-04-05T05:33:57.693423Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
+[36mmysql8_orders |[0m 2022-04-05T05:33:57.694340Z 0 [Note] mysqld (mysqld 8.0.0-dmr) starting as process 1 ...
+[36mmysql8_orders |[0m 2022-04-05T05:33:57.696541Z 0 [Note] InnoDB: Using Linux native AIO
+[36mmysql8_orders |[0m 2022-04-05T05:33:57.696622Z 0 [Note] Plugin 'FEDERATED' is disabled.
+[36mmysql8_orders |[0m 2022-04-05T05:33:57.697487Z 1 [Note] InnoDB: PUNCH HOLE support available
+[36mmysql8_orders |[0m 2022-04-05T05:33:57.697506Z 1 [Note] InnoDB: Mutexes and rw_locks use GCC atomic builtins
+[36mmysql8_orders |[0m 2022-04-05T05:33:57.697511Z 1 [Note] InnoDB: Uses event mutexes
+[36mmysql8_orders |[0m 2022-04-05T05:33:57.697513Z 1 [Note] InnoDB: GCC builtin __atomic_thread_fence() is used for memory barrier
+[36mmysql8_orders |[0m 2022-04-05T05:33:57.697516Z 1 [Note] InnoDB: Compressed tables use zlib 1.2.3
+[36mmysql8_orders |[0m 2022-04-05T05:33:57.697779Z 1 [Note] InnoDB: Number of pools: 1
+[36mmysql8_orders |[0m 2022-04-05T05:33:57.697993Z 1 [Note] InnoDB: Using CPU crc32 instructions
+[36mmysql8_orders |[0m 2022-04-05T05:33:57.699831Z 1 [Note] InnoDB: Initializing buffer pool, total size = 128M, instances = 1, chunk size = 128M
+[36mmysql8_orders |[0m mbind: Operation not permitted
+[36mmysql8_orders |[0m mbind: Operation not permitted
+[36mmysql8_orders |[0m mbind: Operation not permitted
+[36mmysql8_orders |[0m mbind: Operation not permitted
+[36mmysql8_orders |[0m 2022-04-05T05:33:57.705940Z 1 [Note] InnoDB: Completed initialization of buffer pool
+[36mmysql8_orders |[0m 2022-04-05T05:33:57.707499Z 0 [Note] InnoDB: If the mysqld execution user is authorized, page cleaner thread priority can be changed. See the man page of setpriority().
+[36mmysql8_orders |[0m 2022-04-05T05:33:57.822541Z 1 [Note] InnoDB: Creating shared tablespace for temporary tables
+[36mmysql8_orders |[0m 2022-04-05T05:33:57.822625Z 1 [Note] InnoDB: Setting file './ibtmp1' size to 12 MB. Physically writing the file full; Please wait ...
+[36mmysql8_orders |[0m 2022-04-05T05:33:57.949113Z 1 [Note] InnoDB: File './ibtmp1' size is now 12 MB.
+[36mmysql8_orders |[0m 2022-04-05T05:33:57.950173Z 1 [Note] InnoDB: 96 redo rollback segment(s) found. 96 redo rollback segment(s) are active.
+[36mmysql8_orders |[0m 2022-04-05T05:33:57.950194Z 1 [Note] InnoDB: 32 non-redo rollback segment(s) are active.
+[36mmysql8_orders |[0m 2022-04-05T05:33:57.950630Z 1 [Note] InnoDB: 8.0.0 started; log sequence number 20330811
+[36mmysql8_orders |[0m 2022-04-05T05:33:57.952009Z 0 [Note] InnoDB: Loading buffer pool(s) from /var/lib/mysql/ib_buffer_pool
+[36mmysql8_orders |[0m 2022-04-05T05:33:58.017179Z 1 [Note] Found data dictionary with version 1
+[36mmysql8_orders |[0m 2022-04-05T05:33:58.020496Z 0 [Note] Found ca.pem, server-cert.pem and server-key.pem in data directory. Trying to enable SSL support using them.
+[36mmysql8_orders |[0m 2022-04-05T05:33:58.020828Z 0 [Warning] CA certificate ca.pem is self signed.
+[36mmysql8_orders |[0m 2022-04-05T05:33:58.022567Z 0 [Note] Server hostname (bind-address): '*'; port: 3308
+[36mmysql8_orders |[0m 2022-04-05T05:33:58.022752Z 0 [Note] IPv6 is available.
+[36mmysql8_orders |[0m 2022-04-05T05:33:58.022811Z 0 [Note]   - '::' resolves to '::';
+[36mmysql8_orders |[0m 2022-04-05T05:33:58.022882Z 0 [Note] Server socket created on IP: '::'.
+[36mmysql8_orders |[0m 2022-04-05T05:33:58.056584Z 0 [Warning] 'user' entry 'mysql.sys@localhost' ignored in --skip-name-resolve mode.
+[36mmysql8_orders |[0m 2022-04-05T05:33:58.056616Z 0 [Warning] 'user' entry 'root@localhost' ignored in --skip-name-resolve mode.
+[36mmysql8_orders |[0m 2022-04-05T05:33:58.056634Z 0 [Warning] 'db' entry 'sys mysql.sys@localhost' ignored in --skip-name-resolve mode.
+[36mmysql8_orders |[0m 2022-04-05T05:33:58.056651Z 0 [Warning] 'proxies_priv' entry '@ root@localhost' ignored in --skip-name-resolve mode.
+[36mmysql8_orders |[0m 2022-04-05T05:33:58.061499Z 0 [Warning] 'tables_priv' entry 'sys_config mysql.sys@localhost' ignored in --skip-name-resolve mode.
+[36mmysql8_orders |[0m 2022-04-05T05:33:58.091006Z 0 [Note] mysqld: ready for connections.
+[36mmysql8_orders |[0m Version: '8.0.0-dmr'  socket: '/var/run/mysqld/mysqld.sock'  port: 3308  MySQL Community Server (GPL)
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:40:50 +0000] "GET /orders_api.php?id=5&ip_add=172.18.0.1 HTTP/1.1" 200 172 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:40:50 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 167 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:40:50 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 167 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:41:42 +0000] "GET /orders_api.php?id=5&ip_add=172.18.0.1 HTTP/1.1" 200 172 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:41:42 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 167 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:41:42 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 167 "-" "-"
+[33mphp73_orders |[0m 172.18.0.9 - - [05/Apr/2022:05:42:35 +0000] "GET /orders_api.php?id=11&ip_add=172.18.0.1&session_id=1 HTTP/1.1" 200 166 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:42:36 +0000] "GET /orders_api.php?id=5&ip_add=172.18.0.1 HTTP/1.1" 200 172 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:42:36 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 167 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:42:36 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 167 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:42:46 +0000] "GET /orders_api.php?id=3&pid=1&ip_add=172.18.0.1 HTTP/1.1" 200 167 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:42:46 +0000] "GET /orders_api.php?id=2&pid=1&user_id=-1&ip_add=172.18.0.1 HTTP/1.1" 200 166 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:42:46 +0000] "GET /orders_api.php?id=5&ip_add=172.18.0.1 HTTP/1.1" 200 172 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:42:46 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 183 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:43:21 +0000] "GET /orders_api.php?id=5&ip_add=172.18.0.1 HTTP/1.1" 200 172 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:43:21 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 183 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:43:21 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 183 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:43:26 +0000] "GET /orders_api.php?id=3&pid=16&ip_add=172.18.0.1 HTTP/1.1" 200 167 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:43:26 +0000] "GET /orders_api.php?id=2&pid=16&user_id=-1&ip_add=172.18.0.1 HTTP/1.1" 200 166 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:43:26 +0000] "GET /orders_api.php?id=5&ip_add=172.18.0.1 HTTP/1.1" 200 172 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:43:26 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 200 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:43:48 +0000] "GET /orders_api.php?id=5&ip_add=172.18.0.1 HTTP/1.1" 200 172 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:43:48 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 200 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:43:48 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 200 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:44:24 +0000] "GET /orders_api.php?id=5&ip_add=172.18.0.1 HTTP/1.1" 200 172 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:44:24 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 200 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:44:24 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 200 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:44:26 +0000] "GET /orders_api.php?id=5&ip_add=172.18.0.1 HTTP/1.1" 200 172 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:44:26 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 200 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:44:26 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 200 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:44:48 +0000] "GET /orders_api.php?id=3&pid=34&ip_add=172.18.0.1 HTTP/1.1" 200 167 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:44:48 +0000] "GET /orders_api.php?id=2&pid=34&user_id=-1&ip_add=172.18.0.1 HTTP/1.1" 200 166 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:44:48 +0000] "GET /orders_api.php?id=5&ip_add=172.18.0.1 HTTP/1.1" 200 172 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:44:48 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 217 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:45:31 +0000] "GET /orders_api.php?id=5&ip_add=172.18.0.1 HTTP/1.1" 200 172 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:45:31 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 217 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:45:31 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 217 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:45:47 +0000] "GET /orders_api.php?id=5&ip_add=172.18.0.1 HTTP/1.1" 200 172 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:45:47 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 217 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:45:47 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 217 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:45:52 +0000] "GET /orders_api.php?id=3&pid=22&ip_add=172.18.0.1 HTTP/1.1" 200 167 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:45:52 +0000] "GET /orders_api.php?id=2&pid=22&user_id=-1&ip_add=172.18.0.1 HTTP/1.1" 200 166 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:45:52 +0000] "GET /orders_api.php?id=5&ip_add=172.18.0.1 HTTP/1.1" 200 172 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:45:52 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 234 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:48:00 +0000] "GET /orders_api.php?id=3&pid=79&ip_add=172.18.0.1 HTTP/1.1" 200 167 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:48:00 +0000] "GET /orders_api.php?id=2&pid=79&user_id=-1&ip_add=172.18.0.1 HTTP/1.1" 200 166 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:48:00 +0000] "GET /orders_api.php?id=5&ip_add=172.18.0.1 HTTP/1.1" 200 172 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:48:00 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 251 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:48:45 +0000] "GET /orders_api.php?id=5&ip_add=172.18.0.1 HTTP/1.1" 200 172 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:48:45 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 251 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:48:45 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 251 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:48:49 +0000] "GET /orders_api.php?id=5&ip_add=172.18.0.1 HTTP/1.1" 200 172 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:48:49 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 251 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:48:49 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 251 "-" "-"
+[33mphp73_orders |[0m 172.18.0.1 - - [05/Apr/2022:05:48:55 +0000] "GET / HTTP/1.1" 403 492 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+[33mphp73_orders |[0m [Tue Apr 05 05:48:55.776587 2022] [autoindex:error] [pid 21] [client 172.18.0.1:35218] AH01276: Cannot serve directory /var/www/html/: No matching DirectoryIndex (index.php,index.html) found, and server-generated directory index forbidden by Options directive
+[33mphp73_orders |[0m 172.18.0.1 - - [05/Apr/2022:05:48:55 +0000] "GET /favicon.ico HTTP/1.1" 404 488 "http://172.18.0.7/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:49:05 +0000] "GET /orders_api.php?id=5&ip_add=172.18.0.1 HTTP/1.1" 200 172 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:49:05 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 251 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:49:05 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 251 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:49:15 +0000] "GET /orders_api.php?id=5&ip_add=172.18.0.1 HTTP/1.1" 200 172 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:49:15 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 251 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:49:15 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 251 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:49:52 +0000] "GET /orders_api.php?id=5&ip_add=172.18.0.1 HTTP/1.1" 200 172 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:49:52 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 251 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:49:52 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 251 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:49:57 +0000] "GET /orders_api.php?id=3&pid=32&ip_add=172.18.0.1 HTTP/1.1" 200 167 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:49:57 +0000] "GET /orders_api.php?id=2&pid=32&user_id=-1&ip_add=172.18.0.1 HTTP/1.1" 200 166 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:49:57 +0000] "GET /orders_api.php?id=5&ip_add=172.18.0.1 HTTP/1.1" 200 172 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:49:57 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 269 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:50:39 +0000] "GET /orders_api.php?id=5&ip_add=172.18.0.1 HTTP/1.1" 200 172 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:50:39 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 269 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:50:39 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 269 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:50:46 +0000] "GET /orders_api.php?id=3&pid=61&ip_add=172.18.0.1 HTTP/1.1" 200 167 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:50:46 +0000] "GET /orders_api.php?id=2&pid=61&user_id=-1&ip_add=172.18.0.1 HTTP/1.1" 200 166 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:50:46 +0000] "GET /orders_api.php?id=5&ip_add=172.18.0.1 HTTP/1.1" 200 172 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:50:46 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 286 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:50:51 +0000] "GET /orders_api.php?id=5&ip_add=172.18.0.1 HTTP/1.1" 200 172 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:50:51 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 286 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:50:51 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 286 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:50:59 +0000] "GET /orders_api.php?id=7&pid=16&ip_add=172.18.0.1 HTTP/1.1" 200 166 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:50:59 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 269 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:51:36 +0000] "GET /orders_api.php?id=5&ip_add=172.18.0.1 HTTP/1.1" 200 172 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:51:36 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 269 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:51:36 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 269 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:51:52 +0000] "GET /orders_api.php?id=5&ip_add=172.18.0.1 HTTP/1.1" 200 172 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:51:52 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 269 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:51:52 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 269 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:54:03 +0000] "GET /orders_api.php?id=5&ip_add=172.18.0.1 HTTP/1.1" 200 172 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:54:03 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 269 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:54:03 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 269 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:54:11 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 269 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:54:11 +0000] "GET /orders_api.php?id=5&ip_add=172.18.0.1 HTTP/1.1" 200 172 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:54:11 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 269 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:55:17 +0000] "GET /orders_api.php?id=5&ip_add=172.18.0.1 HTTP/1.1" 200 172 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:55:17 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 269 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:55:17 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 269 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:55:32 +0000] "GET /orders_api.php?id=5&ip_add=172.18.0.1 HTTP/1.1" 200 172 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:55:32 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 269 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:55:32 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 269 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:56:29 +0000] "GET /orders_api.php?id=5&ip_add=172.18.0.1 HTTP/1.1" 200 172 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:56:29 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 269 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:56:29 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 269 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:56:32 +0000] "GET /orders_api.php?id=5&ip_add=172.18.0.1 HTTP/1.1" 200 172 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:56:32 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 269 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:56:32 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 269 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:56:36 +0000] "GET /orders_api.php?id=5&ip_add=172.18.0.1 HTTP/1.1" 200 172 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:56:36 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 269 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:56:36 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 269 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:56:54 +0000] "GET /orders_api.php?id=5&ip_add=172.18.0.1 HTTP/1.1" 200 172 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:56:54 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 269 "-" "-"
+[33mphp73_orders |[0m 172.18.0.5 - - [05/Apr/2022:05:56:54 +0000] "GET /orders_api.php?id=14&ip_add=172.18.0.1 HTTP/1.1" 200 269 "-" "-"
