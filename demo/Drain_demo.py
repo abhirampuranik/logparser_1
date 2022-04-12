@@ -6,7 +6,7 @@ from logparser import Drain
 input_dir  = '../logs/HDFS/'  # The input directory of log file
 output_dir = 'Drain_result/'  # The output directory of parsing results
 log_file   = 'frontend_logs1.txt'  # The input log file name
-log_format = '<Date> <Time> <Pid> <Level> <Component>: <Content>'  # HDFS log format
+log_format = '<Service> | <IP> - - <Date and Time> <Content>'  # HDFS log format
 # Regular expression list for optional preprocessing (default: [])
 regex      = [
     r'blk_(|-)[0-9]+' , # block id
