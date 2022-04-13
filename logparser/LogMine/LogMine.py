@@ -4,10 +4,11 @@ Author      : LogPAI team
 License     : MIT
 """
 
+from ctypes import alignment
 import sys
 import re
 import os
-import alignment
+from alignment import *
 import copy
 import hashlib
 import pandas as pd
