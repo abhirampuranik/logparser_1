@@ -20,7 +20,7 @@ class partition():
         self.patterns = [log]
         self.level = lev
 
-class LogParser():
+class LogMine():
     def __init__(self, indir, outdir, log_format, max_dist=0.001, levels=2, k=1, k1=1, k2=1, alpha=100, rex=[]):
         self.logformat = log_format
         self.path = indir
