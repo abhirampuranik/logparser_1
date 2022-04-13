@@ -5,8 +5,8 @@ from logparser import LogMine
 
 input_dir  = '../logs/HDFS/' # The input directory of log file
 output_dir = 'LogMine_result/' # The output directory of parsing results
-log_file   = 'HDFS_2k.log' # The input log file name
-log_format = '<Date> <Time> <Pid> <Level> <Component>: <Content>' # HDFS log format
+log_file   = 'frontend_logs1.txt' # The input log file name
+log_format = '<Service> <IP> <Time> <Content>' # HDFS log format
 levels     = 2 # The levels of hierarchy of patterns
 max_dist   = 0.001 # The maximum distance between any log message in a cluster and the cluster representative
 k          = 1 # The message distance weight (default: 1)
