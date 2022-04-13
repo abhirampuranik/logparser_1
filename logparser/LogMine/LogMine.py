@@ -8,7 +8,7 @@ from ctypes import alignment
 import sys
 import re
 import os
-import .alignment
+import alignment
 import copy
 import hashlib
 import pandas as pd
