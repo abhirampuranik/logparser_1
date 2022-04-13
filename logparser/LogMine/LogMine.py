@@ -20,7 +20,7 @@ class partition():
         self.patterns = [log]
         self.level = lev
 
-class LogMine():
+class LogParser():
     def __init__(self, indir, outdir, log_format, max_dist=0.001, levels=2, k=1, k1=1, k2=1, alpha=100, rex=[]):
         self.logformat = log_format
         self.path = indir
@@ -43,7 +43,7 @@ class LogMine():
         starttime = datetime.now()
         self.load_data()
         for lev in range(self.levels):
-            if lev == 0:
+            if lev == 0: 
                 # Clustering
                 self.level_clusters[0] = self.get_clusters(self.df_log['Content_'], lev)
             else:
