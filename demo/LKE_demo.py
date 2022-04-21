@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+import time
 import sys
 sys.path.append('../')
 from logparser import LKE
@@ -10,7 +11,13 @@ log_format      = '<Date> <Time> <Pid> <Level> <Component>: <Content>' # HDFS lo
 regex           = [r'blk_-?\d+', r'(\d+\.){3}\d+(:\d+)?'] # Regular expression list for optional preprocessing (default: [])
 split_threshold = 3 # The threshold used to determine group splitting (default: 4)
 
+
+start = time.time()
 parser = LKE.LogParser(log_format=log_format, indir=input_dir, outdir=output_dir,
                        rex=regex, split_threshold=split_threshold)        
 parser.parse(log_file)
+
+end = time.time()
+print(end - start)
+
 

@@ -1,12 +1,13 @@
 #!/usr/bin/env python
 import sys
+import time
 sys.path.append('../')
 from logparser import Drain
 
 input_dir  = '../logs/HDFS/'  # The input directory of log file
 output_dir = 'Drain_result/'  # The output directory of parsing results
-log_file   = 'frontend_logs1.txt'  # The input log file name
-log_format = '<Service> <IP> <Time> <Content>'  # HDFS log format
+log_file   = 'HDFS_2k.log'  # The input log file name
+log_format = '<Date> <Time> <Pid> <Level> <Component>: <Content>'  # HDFS log format
 # Regular expression list for optional preprocessing (default: [])
 regex      = [
     r'blk_(|-)[0-9]+' , # block id
@@ -16,6 +17,12 @@ regex      = [
 st         = 0.5  # Similarity threshold
 depth      = 4  # Depth of all leaf nodes
 
+
+start = time.time()
 parser = Drain.LogParser(log_format, indir=input_dir, outdir=output_dir,  depth=depth, st=st, rex=regex)
 parser.parse(log_file)
+
+end = time.time()
+print(end - start)
+
 

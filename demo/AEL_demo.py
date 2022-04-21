@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import sys
+import time
 sys.path.append('../')
 from logparser import AEL
 
@@ -11,7 +12,11 @@ minEventCount = 2 # The minimum number of events in a bin
 merge_percent = 0.5 # The percentage of different tokens 
 regex         = [r'blk_-?\d+', r'(\d+\.){3}\d+(:\d+)?'] # Regular expression list for optional preprocessing (default: [])
 
+
+start = time.time()
 parser = AEL.LogParser(input_dir, output_dir, log_format, rex=regex, 
                        minEventCount=minEventCount, merge_percent=merge_percent)
 parser.parse(log_file)
+end = time.time()
 
+print(end - start)

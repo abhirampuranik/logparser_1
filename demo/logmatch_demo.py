@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import sys
+import time
 sys.path.append('../')
 from logparser.logmatch import regexmatch
 

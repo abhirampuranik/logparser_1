@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import sys
+import time
 sys.path.append('../')
 from logparser import LenMa
 
@@ -10,5 +11,11 @@ log_format = '<Date> <Time> <Pid> <Level> <Component>: <Content>' # HDFS log for
 threshold  = 0.9 # TODO description (default: 0.9)
 regex      = [] # Regular expression list for optional preprocessing (default: [])
 
+
+start = time.time()
 parser = LenMa.LogParser(input_dir, output_dir, log_format, threshold=threshold, rex=regex)
 parser.parse(log_file)
+
+end = time.time()
+print(end - start)
+
