@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+import time
 import sys
 sys.path.append('../')
 from logparser import SLCT
@@ -11,6 +11,12 @@ log_format = '<Date> <Time> <Pid> <Level> <Component>: <Content>'  # HDFS log fo
 support    = 10  # The minimum support threshold
 regex      = []  # Regular expression list for optional preprocessing (default: [])
 
+
+start = time.time()
 parser = SLCT.LogParser(log_format=log_format, indir=input_dir, outdir=output_dir, 
                         support=support, rex=regex)
 parser.parse(log_file)
+
+
+end = time.time()
+print(end - start)

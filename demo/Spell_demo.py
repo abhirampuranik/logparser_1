@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import sys
+import time
 sys.path.append('../')
 from logparser import Spell
 
@@ -10,5 +11,11 @@ log_format = '<Date> <Time> <Pid> <Level> <Component>: <Content>'  # HDFS log fo
 tau        = 0.5  # Message type threshold (default: 0.5)
 regex      = []  # Regular expression list for optional preprocessing (default: [])
 
+
+start = time.time()
 parser = Spell.LogParser(indir=input_dir, outdir=output_dir, log_format=log_format, tau=tau, rex=regex)
 parser.parse(log_file)
+
+end = time.time()
+print(end - start)
+

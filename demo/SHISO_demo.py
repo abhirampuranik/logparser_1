@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import sys
+import time
 sys.path.append('../')
 from logparser import SHISO
 
@@ -13,7 +14,13 @@ mergeThreshold = 0.1 # Threshold for searching the most similar template in the 
 formatLookupThreshold = 0.3 # Lowerbound to find the most similar node to adjust
 superFormatThreshold  = 0.85 # Threshold of average LCS length, determing whether or not to create a super format
 
+
+start = time.time()
 parser = SHISO.LogParser(log_format,indir=input_dir,outdir=output_dir, rex=regex, maxChildNum=maxChildNum, 
                          mergeThreshold=mergeThreshold, formatLookupThreshold=formatLookupThreshold, 
                          superFormatThreshold=superFormatThreshold)
 parser.parse(log_file)
+
+end = time.time()
+print(end - start)
+

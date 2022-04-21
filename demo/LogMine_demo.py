@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import sys
+import time
 sys.path.append('../')
 from logparser import LogMine
 
@@ -12,5 +13,11 @@ max_dist   = 0.001 # The maximum distance between any log message in a cluster a
 k          = 1 # The message distance weight (default: 1)
 regex      = []  # Regular expression list for optional preprocessing (default: [])
 
+
+start = time.time()
+
 parser = LogMine.LogParser(input_dir, output_dir, log_format, rex=regex, levels=levels, max_dist=max_dist, k=k)
 parser.parse(log_file)
+end = time.time()
+print(end - start)
+

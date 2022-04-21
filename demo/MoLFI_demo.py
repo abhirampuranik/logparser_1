@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import sys
+import time
 sys.path.append('../')
 from logparser import MoLFI
 import pandas as pd
@@ -10,5 +11,10 @@ log_file   = 'HDFS_2k.log' # The input log file name
 log_format = '<Date> <Time> <Pid> <Level> <Component>: <Content>' # HDFS log format
 regex      = [r'blk_-?\d+', r'(\d+\.){3}\d+(:\d+)?'] # Regular expression list for optional preprocessing (default: [])
 
+start = time.time()
 parser = MoLFI.LogParser(input_dir, output_dir, log_format, rex=regex)
 parser.parse(log_file)
+
+end = time.time()
+print(end - start)
+

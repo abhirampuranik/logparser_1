@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+import time
 import sys
 sys.path.append('../')
 from logparser import LogSig
@@ -11,5 +11,11 @@ log_format   = '<Date> <Time> <Pid> <Level> <Component>: <Content>' # HDFS log f
 regex        = []  # Regular expression list for optional preprocessing (default: [])
 group_number = 14 # The number of message groups to partition
 
+
+start = time.time()
 parser = LogSig.LogParser(input_dir, output_dir, group_number, log_format, rex=regex)
 parser.parse(log_file)
+
+end = time.time()
+print(end - start)
+
