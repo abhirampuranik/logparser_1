@@ -8,7 +8,7 @@ import json
 import numpy as np
 from sklearn.metrics import accuracy_score
 from sklearn.metrics.pairwise import cosine_similarity
-import template
+import .template
 
 class LenmaTemplate(template.Template):
     def __init__(self, index=None, words=None, logid=None, json=None):
